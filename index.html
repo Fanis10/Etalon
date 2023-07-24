@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Главная</title>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=9133eb49-3a97-4b2d-90be-6b80a97a5036" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+	<div class="wrap">
+		<header class="header">
+    <a class="header__logo" href="">
+        <img src="img/logo.svg" alt="">
+    </a>
+    <div class="container">
+        <div class="header-top">
+            <div class="header-top__inner">
+                <div class="header-top__left">
+                    <a class="header-top__logo" href="">
+                        <img src="img/logo.svg" alt="">
+                    </a>
+                    <a class="header-top__tel" href="tel:+7 459 865-81-43">
+                        <span class="text24">+7 459 865-81-43</span>
+                    </a>
+                </div>
+                <div class="header-top__right">
+                    <div class="header-top__wrap">
+                        <div class="header-top__socials">
+                            <button class="header-top__social search-btn">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.1667 9.83333C19.1667 14.988 14.988 19.1667 9.83333 19.1667C4.67868 19.1667 0.5 14.988 0.5 9.83333C0.5 4.67868 4.67868 0.5 9.83333 0.5C13.6218 0.5 16.883 2.75715 18.3457 6M19 8.06826C18.9939 8.03629 19.0064 8.03186 19 8" stroke="#676766" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21.4998 21.5L16.4248 16.425" stroke="#676766" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <a class="header-top__social" href="">
+                                <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.8297 21.4501C20.4905 21.4501 20.1184 21.3387 19.7159 21.1168L10.6009 14.387C10.4988 14.3119 10.4363 14.1947 10.4296 14.0681C10.4237 13.9415 10.4743 13.8192 10.5688 13.734L21.3654 4.0182C21.5384 3.86211 21.805 3.87561 21.9611 4.04942C22.1172 4.22239 22.1029 4.48901 21.9299 4.64511L11.518 14.0158L20.1698 20.408C20.3985 20.5304 20.7849 20.6856 21.06 20.5582C21.3401 20.43 21.4785 20.0208 21.546 19.7001L25.2374 2.30454C25.3808 1.72995 25.3116 1.26757 25.056 1.05495C24.8611 0.892949 24.5708 0.881137 24.257 1.02289L2.55909 9.3912C1.89337 9.65867 1.68412 9.93373 1.68749 10.0249C1.69002 10.0848 1.83346 10.2501 2.26124 10.3809L7.64015 12.06L13.5456 8.33398C13.743 8.21079 14.0029 8.26901 14.1269 8.46561C14.2509 8.6622 14.1927 8.92292 13.9953 9.04695L7.92534 12.8767C7.82071 12.9425 7.69162 12.9594 7.57434 12.9231L2.01234 11.1867C1.02515 10.8846 0.8564 10.3514 0.844587 10.0603C0.827712 9.6612 1.05806 9.08407 2.25112 8.60651L23.9313 0.246637C24.5194 -0.0216759 25.1505 0.0356991 25.5968 0.407793C26.1141 0.838949 26.2828 1.60001 26.0601 2.49523L22.372 19.8748C22.2168 20.6156 21.8945 21.1041 21.4127 21.3252C21.2313 21.4087 21.0372 21.4501 20.8297 21.4501Z" fill="#676766"/>
+                                    <path d="M20.8297 21.4501C20.4905 21.4501 20.1184 21.3387 19.7159 21.1168L14.0459 16.9326C13.8586 16.7943 13.8181 16.5293 13.9573 16.3429C14.0957 16.1555 14.3606 16.115 14.5471 16.2543L20.1698 20.408C20.3985 20.5304 20.7849 20.6856 21.06 20.5582C21.3401 20.43 21.4785 20.0208 21.546 19.7001L25.2374 2.30454C25.3808 1.72995 25.3116 1.26757 25.056 1.05495C24.8611 0.892949 24.5708 0.881137 24.257 1.02289L2.55909 9.3912C1.89337 9.65867 1.68412 9.93373 1.68749 10.0249C1.69002 10.0848 1.83346 10.2501 2.26124 10.3809L7.82493 12.1174C7.95824 12.1587 8.06203 12.2642 8.10337 12.3975L10.0162 18.6927C10.0676 18.8336 10.1073 18.9737 10.1419 19.0952C10.1689 19.1914 10.2026 19.3112 10.2254 19.3466C10.222 19.3424 10.2895 19.3626 10.4692 19.3635C10.8464 19.3635 10.9898 19.2226 11.2767 18.9433L12.6773 17.5815C12.8444 17.4178 13.111 17.4229 13.2739 17.5899C13.4359 17.757 13.4325 18.0244 13.2654 18.1864L11.8884 19.5238C11.5492 19.8554 11.1898 20.2064 10.4692 20.2064C9.64237 20.2064 9.47531 19.8402 9.32934 19.3238C9.29981 19.2192 9.26606 19.0985 9.21543 18.9593L7.36087 12.8565L2.01234 11.1867C1.02515 10.8846 0.8564 10.3514 0.844587 10.0603C0.827712 9.6612 1.05806 9.08407 2.25112 8.60651L23.9313 0.246637C24.5194 -0.0216759 25.1505 0.0356991 25.5968 0.407793C26.1141 0.838949 26.2828 1.60001 26.0601 2.49523L22.372 19.8748C22.2168 20.6156 21.8945 21.1041 21.4127 21.3252C21.2313 21.4087 21.0372 21.4501 20.8297 21.4501Z" fill="#676766"/>
+                                    <path d="M15.6094 7.8125C15.6094 8.04453 15.4195 8.23438 15.1875 8.23438C14.9555 8.23438 14.7656 8.04453 14.7656 7.8125C14.7656 7.58047 14.9555 7.39062 15.1875 7.39062C15.4195 7.39062 15.6094 7.58047 15.6094 7.8125Z" fill="#676766"/>
+                                </svg>
+                            </a>
+                            <a class="header-top__social" href="">
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1_471)">
+                                        <path d="M13.0033 25.1875C10.673 25.1875 8.41587 24.5286 6.46263 23.2806L2.11737 24.6691C1.97194 24.7154 1.81187 24.6764 1.70381 24.5676C1.59656 24.4587 1.55919 24.2978 1.60875 24.1532L3.01031 19.9721C1.57219 17.9246 0.8125 15.5188 0.8125 13C0.8125 9.68825 2.12225 6.58856 4.50044 4.27213C4.6605 4.11612 4.91806 4.11938 5.07487 4.27944C5.23088 4.44031 5.22762 4.69788 5.06675 4.85388C2.84781 7.01675 1.625 9.90925 1.625 13C1.625 15.4164 2.37413 17.7214 3.79031 19.6658C3.8675 19.7722 3.88863 19.9095 3.84638 20.0346L2.63413 23.6519L6.39844 22.4486C6.51544 22.4104 6.64381 22.4291 6.747 22.4965C8.60356 23.725 10.7673 24.375 13.0033 24.375C19.2741 24.375 24.375 19.2725 24.375 13C24.375 6.72831 19.2741 1.625 13.0033 1.625H13.0008C11.2401 1.625 9.55744 2.01581 7.99256 2.78606C7.79106 2.88437 7.54813 2.80231 7.449 2.60162C7.34987 2.40094 7.43194 2.15638 7.63425 2.05725C9.31125 1.23175 11.1166 0.8125 12.9967 0.8125C19.721 0.8125 25.1875 6.27981 25.1875 13C25.1875 19.7202 19.721 25.1875 13.0033 25.1875Z" fill="#676766"/>
+                                        <path d="M16.7393 19.9005C15.9179 19.9005 14.7715 19.5836 13.1327 18.9044C10.9933 18.0187 8.87272 16.163 7.16078 13.6808L7.09984 13.5939C6.53434 12.8212 5.61865 11.3408 5.61865 9.79543C5.61865 7.98436 6.52459 7.06543 6.91215 6.67299C7.27697 6.29843 7.82215 6.09937 8.43478 6.09937C8.58915 6.09937 8.72728 6.10668 8.85322 6.11399C9.36915 6.1343 9.66815 6.2643 9.95253 6.94437L10.2475 7.65937C10.5595 8.4158 10.9438 9.34936 11.0039 9.4753C11.0705 9.61262 11.2728 10.0343 11.0478 10.4731C10.9275 10.7298 10.8097 10.8655 10.648 11.0524C10.5343 11.1832 10.4587 11.2644 10.3815 11.3457C10.2922 11.4416 10.2012 11.5358 10.1102 11.6504C9.95334 11.834 9.95334 11.834 10.0062 11.9258C10.3068 12.4336 10.9462 13.4086 11.8367 14.2008C12.9921 15.2286 13.9257 15.6064 14.3742 15.7884L14.4855 15.8339C14.6033 15.8827 14.752 15.9176 14.8633 15.7998C15.0648 15.5829 15.3199 15.2262 15.5897 14.8484L15.7513 14.6217C16.0349 14.2211 16.3843 14.1366 16.6272 14.1366C16.7694 14.1366 16.9173 14.1651 17.0684 14.2219C17.4462 14.3536 19.4344 15.344 19.4547 15.3537L19.6457 15.4472C19.93 15.5837 20.1543 15.6917 20.2827 15.9176C20.4687 16.241 20.3956 17.0892 20.1128 17.8896C19.774 18.8475 18.5147 19.5958 17.5023 19.8136C17.3008 19.8558 17.0611 19.9005 16.7393 19.9005ZM8.43397 6.91187C8.05047 6.91187 7.70109 7.02724 7.52071 7.21168C7.14615 7.59193 6.43034 8.31749 6.43034 9.79543C6.43034 10.755 6.90565 11.9551 7.7344 13.0869L7.82865 13.2209C9.45203 15.5756 11.4459 17.3281 13.4422 18.1544C14.9803 18.7922 16.0276 19.0888 16.7385 19.0888C16.9823 19.0888 17.1635 19.0547 17.3292 19.0197C18.1198 18.8491 19.1151 18.2649 19.3434 17.619C19.5904 16.9227 19.5855 16.3872 19.5563 16.2808C19.5547 16.306 19.4084 16.2369 19.2906 16.1801L19.0883 16.0809C18.5187 15.7957 17.0465 15.0767 16.7889 14.9865C16.7207 14.9605 16.6687 14.9499 16.6248 14.9499C16.5882 14.9499 16.5127 14.9499 16.4103 15.0946L16.2478 15.3221C15.9626 15.7218 15.6937 16.0988 15.4548 16.3556C15.1485 16.683 14.6228 16.774 14.1702 16.5855L14.067 16.5432C13.6145 16.3604 12.5542 15.9314 11.294 14.8102C10.3222 13.9441 9.62915 12.8902 9.30253 12.3386C8.95884 11.7462 9.3074 11.3384 9.47478 11.1426C9.58122 11.0101 9.68522 10.9004 9.78922 10.7899C9.85747 10.7176 9.92572 10.6453 9.99559 10.5641C10.1784 10.3536 10.2385 10.2837 10.3173 10.1156C10.3409 10.0692 10.3539 10.0034 10.2694 9.82793C10.2077 9.69793 9.81278 8.74405 9.49509 7.97055L9.20097 7.25799C9.0669 6.93624 9.0669 6.93624 8.81178 6.92649C8.69478 6.91836 8.57128 6.91187 8.43397 6.91187Z" fill="#676766"/>
+                                        <path d="M6.09375 3.65625C6.31812 3.65625 6.5 3.47437 6.5 3.25C6.5 3.02563 6.31812 2.84375 6.09375 2.84375C5.86938 2.84375 5.6875 3.02563 5.6875 3.25C5.6875 3.47437 5.86938 3.65625 6.09375 3.65625Z" fill="#676766"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1_471">
+                                            <rect width="26" height="26" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                        <button class="header-top__btn btn-red" data-modal="contactModal">
+                            <span class="text20">Оценка часов онлайн</span>
+                        </button>
+                    </div>
+                    <div class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="search">
+                <div class="search-close">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="search-group">
+                    <input type="search" placeholder="Введите">
+                    <button>
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.1667 9.83333C19.1667 14.988 14.988 19.1667 9.83333 19.1667C4.67868 19.1667 0.5 14.988 0.5 9.83333C0.5 4.67868 4.67868 0.5 9.83333 0.5C13.6218 0.5 16.883 2.75715 18.3457 6M19 8.06826C18.9939 8.03629 19.0064 8.03186 19 8" stroke="#676766" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21.4998 21.5L16.4248 16.425" stroke="#676766" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="header-center__inner">
+                <div class="header-center__items">
+                    <a class="header-center__item" href="">
+                        <span class="text20">ОЦЕНКА И ВЫКУП ЧАСОВ</span>
+                    </a>
+                    <a class="header-center__item" href="">
+                        <span class="text20">ПРОДАЖА И ОБМЕН ЧАСОВ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-bottom__inner">
+                <div class="header-bottom__menu">
+                    <ul class="header-bottom__list">
+                        <li><a class="header-bottom__link" href="">ГЛАВНАЯ</a></li>
+                        <li class="header-bottom__item">
+                            <div class="header-bottom__item-show">
+                                <span>ВЫКУП ЧАСОВ</span>
+                                <i>
+                                    <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_431)">
+                                            <path d="M3.89139 3.68784L0.861476 0.1278C0.791398 0.0454006 0.697849 4.46333e-07 0.598101 4.50693e-07C0.498353 4.55053e-07 0.404805 0.0454006 0.334726 0.1278L0.111594 0.38992C-0.0335999 0.56071 -0.0335999 0.838301 0.111594 1.00884L2.65589 3.99834L0.108771 6.99116C0.0386925 7.07357 -3.56938e-08 7.18342 -3.05735e-08 7.30056C-2.54476e-08 7.41783 0.0386925 7.52768 0.108771 7.61015L0.331903 7.8722C0.402037 7.9546 0.49553 8 0.595278 8C0.695026 8 0.788575 7.9546 0.858653 7.8722L3.89139 4.30891C3.96164 4.22624 4.00022 4.11587 4 3.99854C4.00022 3.88075 3.96164 3.77044 3.89139 3.68784Z" fill="#8B8D8D"></path>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1_431">
+                                                <rect width="8" height="4" fill="white" transform="translate(0 8) rotate(-90)"></rect>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </i>
+                            </div>
+                            <div class="header-bottom__item-hidden">
+                                <div class="header-bottom__item-wrap">
+                                    <div class="header-bottom__question">
+                                        <div class="header-bottom__question-show">
+                                            <span>Выкуп</span>
+                                            <i>
+                                                <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_431)">
+                                                        <path d="M3.89139 3.68784L0.861476 0.1278C0.791398 0.0454006 0.697849 4.46333e-07 0.598101 4.50693e-07C0.498353 4.55053e-07 0.404805 0.0454006 0.334726 0.1278L0.111594 0.38992C-0.0335999 0.56071 -0.0335999 0.838301 0.111594 1.00884L2.65589 3.99834L0.108771 6.99116C0.0386925 7.07357 -3.56938e-08 7.18342 -3.05735e-08 7.30056C-2.54476e-08 7.41783 0.0386925 7.52768 0.108771 7.61015L0.331903 7.8722C0.402037 7.9546 0.49553 8 0.595278 8C0.695026 8 0.788575 7.9546 0.858653 7.8722L3.89139 4.30891C3.96164 4.22624 4.00022 4.11587 4 3.99854C4.00022 3.88075 3.96164 3.77044 3.89139 3.68784Z" fill="#8B8D8D"></path>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1_431">
+                                                            <rect width="8" height="4" fill="white" transform="translate(0 8) rotate(-90)"></rect>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </i>
+                                        </div>
+                                        <div class="header-bottom__question-hidden">
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Выкуп</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Что влияет на оценку</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Как быстро получить объективную оценку</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="header-bottom__question">
+                                        <div class="header-bottom__question-show">
+                                            <span>Что влияет на оценку</span>
+                                            <i>
+                                                <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_431)">
+                                                        <path d="M3.89139 3.68784L0.861476 0.1278C0.791398 0.0454006 0.697849 4.46333e-07 0.598101 4.50693e-07C0.498353 4.55053e-07 0.404805 0.0454006 0.334726 0.1278L0.111594 0.38992C-0.0335999 0.56071 -0.0335999 0.838301 0.111594 1.00884L2.65589 3.99834L0.108771 6.99116C0.0386925 7.07357 -3.56938e-08 7.18342 -3.05735e-08 7.30056C-2.54476e-08 7.41783 0.0386925 7.52768 0.108771 7.61015L0.331903 7.8722C0.402037 7.9546 0.49553 8 0.595278 8C0.695026 8 0.788575 7.9546 0.858653 7.8722L3.89139 4.30891C3.96164 4.22624 4.00022 4.11587 4 3.99854C4.00022 3.88075 3.96164 3.77044 3.89139 3.68784Z" fill="#8B8D8D"></path>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1_431">
+                                                            <rect width="8" height="4" fill="white" transform="translate(0 8) rotate(-90)"></rect>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </i>
+                                        </div>
+                                        <div class="header-bottom__question-hidden">
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Выкуп</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Что влияет на оценку</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Как быстро получить объективную оценку</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="header-bottom__question">
+                                        <div class="header-bottom__question-show">
+                                            <span>Как быстро получить объективную оценку</span>
+                                            <i>
+                                                <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_431)">
+                                                        <path d="M3.89139 3.68784L0.861476 0.1278C0.791398 0.0454006 0.697849 4.46333e-07 0.598101 4.50693e-07C0.498353 4.55053e-07 0.404805 0.0454006 0.334726 0.1278L0.111594 0.38992C-0.0335999 0.56071 -0.0335999 0.838301 0.111594 1.00884L2.65589 3.99834L0.108771 6.99116C0.0386925 7.07357 -3.56938e-08 7.18342 -3.05735e-08 7.30056C-2.54476e-08 7.41783 0.0386925 7.52768 0.108771 7.61015L0.331903 7.8722C0.402037 7.9546 0.49553 8 0.595278 8C0.695026 8 0.788575 7.9546 0.858653 7.8722L3.89139 4.30891C3.96164 4.22624 4.00022 4.11587 4 3.99854C4.00022 3.88075 3.96164 3.77044 3.89139 3.68784Z" fill="#8B8D8D"></path>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1_431">
+                                                            <rect width="8" height="4" fill="white" transform="translate(0 8) rotate(-90)"></rect>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </i>
+                                        </div>
+                                        <div class="header-bottom__question-hidden">
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Выкуп</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Что влияет на оценку</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Как быстро получить объективную оценку</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="header-bottom__link" href="">ОЦЕНКА ЧАСОВ И ПРОЧЕГО</a></li>
+                        <li><a class="header-bottom__link" href="">В ПРОДАЖЕ</a></li>
+                        <li><a class="header-bottom__link" href="">УСЛУГИ</a></li>
+                        <li class="header-bottom__item">
+                            <div class="header-bottom__item-show">
+                                <span>О НАС</span>
+                                <i>
+                                    <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_431)">
+                                            <path d="M3.89139 3.68784L0.861476 0.1278C0.791398 0.0454006 0.697849 4.46333e-07 0.598101 4.50693e-07C0.498353 4.55053e-07 0.404805 0.0454006 0.334726 0.1278L0.111594 0.38992C-0.0335999 0.56071 -0.0335999 0.838301 0.111594 1.00884L2.65589 3.99834L0.108771 6.99116C0.0386925 7.07357 -3.56938e-08 7.18342 -3.05735e-08 7.30056C-2.54476e-08 7.41783 0.0386925 7.52768 0.108771 7.61015L0.331903 7.8722C0.402037 7.9546 0.49553 8 0.595278 8C0.695026 8 0.788575 7.9546 0.858653 7.8722L3.89139 4.30891C3.96164 4.22624 4.00022 4.11587 4 3.99854C4.00022 3.88075 3.96164 3.77044 3.89139 3.68784Z" fill="#8B8D8D"></path>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1_431">
+                                                <rect width="8" height="4" fill="white" transform="translate(0 8) rotate(-90)"></rect>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </i>
+                            </div>
+                            <div class="header-bottom__item-hidden header-bottom__item-hidden2">
+                                <div class="header-bottom__item-wrap">
+                                    <div class="header-bottom__question">
+                                        <div class="header-bottom__question-show">
+                                            <span>Выкуп</span>
+                                            <i>
+                                                <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_431)">
+                                                        <path d="M3.89139 3.68784L0.861476 0.1278C0.791398 0.0454006 0.697849 4.46333e-07 0.598101 4.50693e-07C0.498353 4.55053e-07 0.404805 0.0454006 0.334726 0.1278L0.111594 0.38992C-0.0335999 0.56071 -0.0335999 0.838301 0.111594 1.00884L2.65589 3.99834L0.108771 6.99116C0.0386925 7.07357 -3.56938e-08 7.18342 -3.05735e-08 7.30056C-2.54476e-08 7.41783 0.0386925 7.52768 0.108771 7.61015L0.331903 7.8722C0.402037 7.9546 0.49553 8 0.595278 8C0.695026 8 0.788575 7.9546 0.858653 7.8722L3.89139 4.30891C3.96164 4.22624 4.00022 4.11587 4 3.99854C4.00022 3.88075 3.96164 3.77044 3.89139 3.68784Z" fill="#8B8D8D"></path>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1_431">
+                                                            <rect width="8" height="4" fill="white" transform="translate(0 8) rotate(-90)"></rect>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </i>
+                                        </div>
+                                        <div class="header-bottom__question-hidden header-bottom__question-hidden2">
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Выкуп</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Что влияет на оценку</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Как быстро получить объективную оценку</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="header-bottom__question">
+                                        <div class="header-bottom__question-show">
+                                            <span>Что влияет на оценку</span>
+                                            <i>
+                                                <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_431)">
+                                                        <path d="M3.89139 3.68784L0.861476 0.1278C0.791398 0.0454006 0.697849 4.46333e-07 0.598101 4.50693e-07C0.498353 4.55053e-07 0.404805 0.0454006 0.334726 0.1278L0.111594 0.38992C-0.0335999 0.56071 -0.0335999 0.838301 0.111594 1.00884L2.65589 3.99834L0.108771 6.99116C0.0386925 7.07357 -3.56938e-08 7.18342 -3.05735e-08 7.30056C-2.54476e-08 7.41783 0.0386925 7.52768 0.108771 7.61015L0.331903 7.8722C0.402037 7.9546 0.49553 8 0.595278 8C0.695026 8 0.788575 7.9546 0.858653 7.8722L3.89139 4.30891C3.96164 4.22624 4.00022 4.11587 4 3.99854C4.00022 3.88075 3.96164 3.77044 3.89139 3.68784Z" fill="#8B8D8D"></path>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1_431">
+                                                            <rect width="8" height="4" fill="white" transform="translate(0 8) rotate(-90)"></rect>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </i>
+                                        </div>
+                                        <div class="header-bottom__question-hidden header-bottom__question-hidden2">
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Выкуп</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Что влияет на оценку</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Как быстро получить объективную оценку</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="header-bottom__question">
+                                        <div class="header-bottom__question-show">
+                                            <span>Как быстро получить объективную оценку</span>
+                                            <i>
+                                                <svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_431)">
+                                                        <path d="M3.89139 3.68784L0.861476 0.1278C0.791398 0.0454006 0.697849 4.46333e-07 0.598101 4.50693e-07C0.498353 4.55053e-07 0.404805 0.0454006 0.334726 0.1278L0.111594 0.38992C-0.0335999 0.56071 -0.0335999 0.838301 0.111594 1.00884L2.65589 3.99834L0.108771 6.99116C0.0386925 7.07357 -3.56938e-08 7.18342 -3.05735e-08 7.30056C-2.54476e-08 7.41783 0.0386925 7.52768 0.108771 7.61015L0.331903 7.8722C0.402037 7.9546 0.49553 8 0.595278 8C0.695026 8 0.788575 7.9546 0.858653 7.8722L3.89139 4.30891C3.96164 4.22624 4.00022 4.11587 4 3.99854C4.00022 3.88075 3.96164 3.77044 3.89139 3.68784Z" fill="#8B8D8D"></path>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1_431">
+                                                            <rect width="8" height="4" fill="white" transform="translate(0 8) rotate(-90)"></rect>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </i>
+                                        </div>
+                                        <div class="header-bottom__question-hidden header-bottom__question-hidden2">
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Выкуп</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Что влияет на оценку</span>
+                                            </a>
+                                            <a class="header-bottom__question-link" href="">
+                                                <span>Как быстро получить объективную оценку</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="header-bottom__link" href="">КОНТАКТЫ</a></li>
+                    </ul>
+                    <div class="header-bottom__items">
+                        <a href="" class="header-bottom__item">
+                            <span class="text20">ОЦЕНКА И ВЫКУП ЧАСОВ</span>
+                        </a>
+                        <a href="" class="header-bottom__item">
+                            <span class="text20">ПРОДАЖА И ОБМЕН ЧАСОВ</span>
+                        </a>
+                    </div>
+                    <div class="header-bottom__tel">
+                        <a href="tel:+7 459 865-81-43" class="text20">+7 459 865-81-43</a>
+                    </div>
+                    <button class="header-bottom__btn btn-red" data-modal="contactModal">
+                        <span class="text20">Оценка часов онлайн</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+		<section class="purchase">
+			<div class="container">
+				<div class="purchase__inner">
+					<div class="purchase__top">
+						<h2 class="purchase__title">
+							<span class="text36">ВЫКУПИМ ВАШИ ЧАСЫ ПРЕМИАЛЬНЫХ МАРОК</span>
+						</h2>
+						<div class="lines-top"></div>
+					</div>
+					<div class="purchase__slider">
+						<div class="purchase__swiper swiper mySwiper">
+							<div class="purchase__swiper-wrapper swiper-wrapper">
+								<div class="purchase-card swiper-slide">
+									<div class="purchase-card__icon">
+										<img src="img/purchase-icon.svg" alt="">
+									</div>
+									<div class="purchase-card__title">
+										<span class="text20">*Выкупаем только оригинальные часы</span>
+									</div>
+								</div>
+								<div class="purchase-card swiper-slide">
+									<div class="purchase-card__icon">
+										<img src="img/purchase-icon2.svg" alt="">
+									</div>
+									<div class="purchase-card__title">
+										<span class="text20">*Выход на сделку и выплаты в день обращения</span>
+									</div>
+								</div>
+								<div class="purchase-card swiper-slide">
+									<div class="purchase-card__icon">
+										<img src="img/purchase-icon.svg" alt="">
+									</div>
+									<div class="purchase-card__title">
+										<span class="text20">*Выезд специалиста к вам или встреча в уютном офисе</span>
+									</div>
+								</div>
+								<div class="purchase-card swiper-slide">
+									<div class="purchase-card__icon">
+										<img src="img/purchase-icon.svg" alt="">
+									</div>
+									<div class="purchase-card__title">
+										<span class="text20">*Оценка до 90% стоимости по рынку</span>
+									</div>
+								</div>
+								<div class="purchase-card swiper-slide">
+									<div class="purchase-card__icon">
+										<img src="img/purchase-icon.svg" alt="">
+									</div>
+									<div class="purchase-card__title">
+										<span class="text20">*Выкупаем только оригинальные часы</span>
+									</div>
+								</div>
+								<div class="purchase-card swiper-slide">
+									<div class="purchase-card__icon">
+										<img src="img/purchase-icon2.svg" alt="">
+									</div>
+									<div class="purchase-card__title">
+										<span class="text20">*Выход на сделку и выплаты в день обращения</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-button-prev">
+							<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.0308 23.3076L0.692383 11.9692L12.0308 0.611572L13.6615 2.24227L3.95383 11.9692L13.6615 21.6769L12.0308 23.3076Z" fill="#676766"/>
+							</svg>
+						</div>
+						<div class="swiper-button-next">
+							<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.76942 23.3076L0.138672 21.6769L9.84637 11.9692L0.138672 2.24227L1.76942 0.611572L13.1078 11.9692L1.76942 23.3076Z" fill="#676766"/>
+							</svg>
+						</div>
+					</div>
+					<div class="purchase__bottom">
+						<h2 class="purchase__title">
+							<span class="text36">БЫСТРО. КОНФИДЕНЦИАЛЬНО. ДОРОГО</span>
+						</h2>
+						<div class="lines-bottom"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="connection">
+			<div class="container">
+				<div class="connection__inner">
+					<div class="connection__top">
+						<h2 class="connection__title">
+							<span class="text36">УЗНАЙТЕ ЦЕНУ ПРЯМО СЕЙЧАС</span>
+						</h2>
+						<div class="lines-top"></div>
+					</div>
+					<div class="connection__subtitle">
+						<span class="text26">ЗАПОЛНИТЕ ЗАЯВКУ И ПРИКРЕПИТЕ ФОТО</span>
+					</div>
+					<div class="connection__flex">
+						<form class="connection__form form">
+							<fieldset class="connection__form-group form-group">
+								<input type="text" placeholder="Имя">
+							</fieldset>
+							<fieldset class="connection__form-group form-group">
+								<input type="tel" placeholder="Телефон">
+							</fieldset>
+							<fieldset class="connection__form-group form-file form-group">
+								<input type="file" accept="image/*" placeholder="Прикрепите фото (от 3 до 5 изображений)">
+								<div class="form-file__input">
+									<span>Прикрепите фото (от 3 до 5 изображений)</span>
+									<img src="img/add.svg" alt="">
+								</div>
+							</fieldset>
+							<fieldset class="connection__form-group form-group">
+								<input type="text" placeholder="Комментарий">
+							</fieldset>
+							<button class="connection__form-btn form-btn btn-red">
+								<span class="text20">ОЦЕНИТЬ</span>
+							</button>
+						</form>
+						<div class="connection__info">
+							<img class="connection__img" src="img/connection-img.svg" alt="">
+							<div class="connection__desc">
+								<p class="text26">НАШ СПЕЦИАЛИСТ СВЯЖЕТСЯ И СОГЛАСУЕТ ЦЕНУ</p>
+								<p class="text26">ДОГОВАРИВАЕМСЯ О МЕСТЕ ВСТРЕЧИ ДЛЯ ПРОВЕРКИ ОРИГИНАЛЬНОСТИ И СПОСОБЕ ВЫПЛАТЫ</p>
+								<p class="text26">ПРОВОДИМ СДЕЛКУ</p>
+							</div>
+						</div>
+					</div>
+					<div class="connection__form-check form-check">
+						<input type="checkbox">
+						<label class="text18">Я согласен с политикой конфиденциальности и пользовательским соглашением</label>
+					</div>
+					<div class="connection__bottom">
+						<div class="lines-bottom"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="stamps">
+			<div class="container">
+				<div class="stamps__inner">
+					<div class="stamps__top">
+						<h2 class="stamps__title">
+							<span class="text36">МАРКИ ЧАСОВ, КОТОРЫЕ МЫ ВЫКУПАЕМ</span>
+						</h2>
+						<div class="lines-top"></div>
+					</div>
+					<div class="stamps__desc">
+						<p class="text26">Rolex, Ulysse Nardine, Breitling, Omega, Tag Heure, Longines, Maurice Lacroix, Cartier, Chopard, Cvstos, Baume & Marcier, Panerai, Breguet, Zenith, Eterna, Grand Seiko, IWC, Tudor, Jaeger-LeCoultre, bell&ross, Bvlgari, Roger Dubuis, Romain Jerome, Dewitt, Franck Muller, Franc Vila, Pierre Kunz, JeanRichard, Louis Vuitton, Jacob & Co., Graham, Armand Nicolet, Mountblanc, Cirum, JAQUET DROZ, Girard Perregaux, De Grisogono, Ebel, Wyler, Vacheron Constantin, Blancpain, Harry Winston, Richard Mille, Gerald Genta, DeLaCour, Daniel Roth, Patek Philippe, Audemars Piguet, B.R.M, Concord, PARMIGIANI, Cuervo y Sobrinos, U-Boat, Rebellion, Yorg Hysek, A.Lange & Sohne, Glashutte Original, Chronoswiss</p>
+					</div>
+					<div class="about__bottom">
+						<div class="lines-bottom"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="product">
+			<div class="container">
+				<div class="product__inner">
+					<div class="product__top">
+						<h2 class="product__title">
+							<span class="text36">ЧАСЫ В ПРОДАЖЕ / ГОРЯЩИЕ ПРЕДЛОЖЕНИЯ</span>
+						</h2>
+						<div class="lines-top"></div>
+					</div>
+					<div class="product__slider">
+						<div class="product__swiper swiper mySwiper">
+							<div class="product__swiper-wrapper swiper-wrapper">
+								<a href="" class="product-card swiper-slide">
+									<div class="product-card__img">
+										<img src="img/product-img.webp" alt="">
+									</div>
+									<div class="product-card__desc">
+										<div class="product-card__title">
+											<span class="text26">PATEK PHILIPPE</span>
+										</div>
+										<div class="product-card__subtitle">
+											<span class="text22">Aquanaut</span>
+										</div>
+										<div class="product-card__material">
+											<span class="text18">Cталь</span>
+										</div>
+										<div class="product-card__price">
+											<span class="text30">4 585 000 ₽</span>
+										</div>
+										<div class="product-card__info">
+											<i>
+												<img src="img/product-icon.svg" alt="">
+											</i>
+											<span class="text18">В наличии</span>
+										</div>
+									</div>
+								</a>
+								<a href="" class="product-card swiper-slide">
+									<div class="product-card__img">
+										<img src="img/product-img.webp" alt="">
+									</div>
+									<div class="product-card__desc">
+										<div class="product-card__title">
+											<span class="text26">PATEK PHILIPPE</span>
+										</div>
+										<div class="product-card__subtitle">
+											<span class="text22">Aquanaut</span>
+										</div>
+										<div class="product-card__material">
+											<span class="text18">Cталь</span>
+										</div>
+										<div class="product-card__price">
+											<span class="text30">4 585 000 ₽</span>
+										</div>
+										<div class="product-card__info">
+											<span class="text18">x Продано</span>
+										</div>
+									</div>
+								</a>
+								<a href="" class="product-card swiper-slide">
+									<div class="product-card__img">
+										<img src="img/product-img.webp" alt="">
+									</div>
+									<div class="product-card__desc">
+										<div class="product-card__title">
+											<span class="text26">PATEK PHILIPPE</span>
+										</div>
+										<div class="product-card__subtitle">
+											<span class="text22">Aquanaut</span>
+										</div>
+										<div class="product-card__material">
+											<span class="text18">Cталь</span>
+										</div>
+										<div class="product-card__price">
+											<span class="text30">3 150 000 ₽</span>
+											<span>3 500 000 ₽</span>
+										</div>
+										<div class="product-card__info">
+											<i>
+												<img src="img/product-icon.svg" alt="">
+											</i>
+											<span class="text18">В наличии</span>
+										</div>
+									</div>
+								</a>
+								<a href="" class="product-card swiper-slide">
+									<div class="product-card__img">
+										<img src="img/product-img.webp" alt="">
+									</div>
+									<div class="product-card__desc">
+										<div class="product-card__title">
+											<span class="text26">PATEK PHILIPPE</span>
+										</div>
+										<div class="product-card__subtitle">
+											<span class="text22">Aquanaut</span>
+										</div>
+										<div class="product-card__material">
+											<span class="text18">Cталь</span>
+										</div>
+										<div class="product-card__price">
+											<span class="text30">3 150 000 ₽</span>
+											<span>3 500 000 ₽</span>
+										</div>
+										<div class="product-card__info">
+											<i>
+												<img src="img/product-icon.svg" alt="">
+											</i>
+											<span class="text18">В наличии</span>
+										</div>
+									</div>
+								</a>
+								<a href="" class="product-card swiper-slide">
+									<div class="product-card__img">
+										<img src="img/product-img.webp" alt="">
+									</div>
+									<div class="product-card__desc">
+										<div class="product-card__title">
+											<span class="text26">PATEK PHILIPPE</span>
+										</div>
+										<div class="product-card__subtitle">
+											<span class="text22">Aquanaut</span>
+										</div>
+										<div class="product-card__material">
+											<span class="text18">Cталь</span>
+										</div>
+										<div class="product-card__price">
+											<span class="text30">4 585 000 ₽</span>
+										</div>
+										<div class="product-card__info">
+											<i>
+												<img src="img/product-icon.svg" alt="">
+											</i>
+											<span class="text18">В наличии</span>
+										</div>
+									</div>
+								</a>
+								<a href="" class="product-card swiper-slide">
+									<div class="product-card__img">
+										<img src="img/product-img.webp" alt="">
+									</div>
+									<div class="product-card__desc">
+										<div class="product-card__title">
+											<span class="text26">PATEK PHILIPPE</span>
+										</div>
+										<div class="product-card__subtitle">
+											<span class="text22">Aquanaut</span>
+										</div>
+										<div class="product-card__material">
+											<span class="text18">Cталь</span>
+										</div>
+										<div class="product-card__price">
+											<span class="text30">4 585 000 ₽</span>
+										</div>
+										<div class="product-card__info">
+											<span class="text18">x Продано</span>
+										</div>
+									</div>
+								</a>
+								<a href="" class="product-card swiper-slide">
+									<div class="product-card__img">
+										<img src="img/product-img.webp" alt="">
+									</div>
+									<div class="product-card__desc">
+										<div class="product-card__title">
+											<span class="text26">PATEK PHILIPPE</span>
+										</div>
+										<div class="product-card__subtitle">
+											<span class="text22">Aquanaut</span>
+										</div>
+										<div class="product-card__material">
+											<span class="text18">Cталь</span>
+										</div>
+										<div class="product-card__price">
+											<span class="text30">3 150 000 ₽</span>
+											<span>3 500 000 ₽</span>
+										</div>
+										<div class="product-card__info">
+											<i>
+												<img src="img/product-icon.svg" alt="">
+											</i>
+											<span class="text18">В наличии</span>
+										</div>
+									</div>
+								</a>
+								<a href="" class="product-card swiper-slide">
+									<div class="product-card__img">
+										<img src="img/product-img.webp" alt="">
+									</div>
+									<div class="product-card__desc">
+										<div class="product-card__title">
+											<span class="text26">PATEK PHILIPPE</span>
+										</div>
+										<div class="product-card__subtitle">
+											<span class="text22">Aquanaut</span>
+										</div>
+										<div class="product-card__material">
+											<span class="text18">Cталь</span>
+										</div>
+										<div class="product-card__price">
+											<span class="text30">3 150 000 ₽</span>
+											<span>3 500 000 ₽</span>
+										</div>
+										<div class="product-card__info">
+											<i>
+												<img src="img/product-icon.svg" alt="">
+											</i>
+											<span class="text18">В наличии</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="swiper-button-prev">
+							<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.0308 23.3076L0.692383 11.9692L12.0308 0.611572L13.6615 2.24227L3.95383 11.9692L13.6615 21.6769L12.0308 23.3076Z" fill="#676766"/>
+							</svg>
+						</div>
+						<div class="swiper-button-next">
+							<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.76942 23.3076L0.138672 21.6769L9.84637 11.9692L0.138672 2.24227L1.76942 0.611572L13.1078 11.9692L1.76942 23.3076Z" fill="#676766"/>
+							</svg>
+						</div>
+					</div>
+					<div class="product__bottom">
+						<div class="lines-bottom"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="about">
+			<div class="container">
+				<div class="about__inner">
+					<div class="about__top">
+						<h2 class="about__title">
+							<span class="text36">О НАС</span>
+						</h2>
+						<div class="lines-top"></div>
+					</div>
+					<div class="about__desc">
+						<p class="text26">
+							«Эталон» — надежный московский ломбард часов. Мы работаем продолжительное время и создали себе безупречную репутацию.
+						</p>
+						<p class="text26">
+							«Эталон» пользуется заслуженным авторитетом и доверием наших клиентов. Если Вы намерены осуществить продажу мужских или женских часов любых известных элитных марок, наш ломбард поможет Вам независимо от того, новые они или нет.
+						</p>
+					</div>
+					<div class="about__bottom">
+						<div class="lines-bottom"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="contacts">
+			<div class="container">
+				<div class="contacts__inner">
+					<div class="contacts__top">
+						<h2 class="contacts__title">
+							<span class="text36">КОНТАКТЫ</span>
+						</h2>
+						<div class="lines-top"></div>
+					</div>
+					<div class="contacts__content">
+						<div class="contacts__desc">
+							<div class="contacts__text">
+								<p class="text26">
+									Росийская Федерация
+									483008
+									Москва, ул. Новый Арбат, 11
+									корпус А, строение 3
+								</p>
+							</div>
+							<div class="contacts__tel">
+								<p class="text26">Тел./fax: <a href="tel:8 459 8658143">8 459 8658143</a></p>
+							</div>
+						</div>
+						<div id="map" class="map"></div>
+					</div>
+					<div class="contacts__bottom">
+						<div class="lines-bottom"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<button data-modal="contactModal" class="btn-white">
+			<span>ОНЛАЙН ОЦЕНКА ЧАСОВ</span>
+			<i>
+				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g clip-path="url(#clip0_1_131)">
+						<path opacity="0.2" d="M20 31.25C26.2132 31.25 31.25 26.2132 31.25 20C31.25 13.7868 26.2132 8.75 20 8.75C13.7868 8.75 8.75 13.7868 8.75 20C8.75 26.2132 13.7868 31.25 20 31.25Z" fill="#2C4158"/>
+						<path d="M20 31.25C26.2132 31.25 31.25 26.2132 31.25 20C31.25 13.7868 26.2132 8.75 20 8.75C13.7868 8.75 8.75 13.7868 8.75 20C8.75 26.2132 13.7868 31.25 20 31.25Z" stroke="#2C4158" stroke-miterlimit="10"/>
+						<path d="M20 13.75V20H26.25" stroke="#2C4158" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M13.75 10.6406L14.8125 4.78126C14.864 4.49158 15.016 4.22935 15.2418 4.04072C15.4676 3.85209 15.7527 3.74914 16.0469 3.75001H23.9531C24.2473 3.74914 24.5324 3.85209 24.7582 4.04072C24.984 4.22935 25.136 4.49158 25.1875 4.78126L26.25 10.6406" stroke="#2C4158" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M13.75 29.3594L14.8125 35.2188C14.864 35.5084 15.016 35.7707 15.2418 35.9593C15.4676 36.1479 15.7527 36.2509 16.0469 36.25H23.9531C24.2473 36.2509 24.5324 36.1479 24.7582 35.9593C24.984 35.7707 25.136 35.5084 25.1875 35.2188L26.25 29.3594" stroke="#2C4158" stroke-linecap="round" stroke-linejoin="round"/>
+					</g>
+					<defs>
+						<clipPath id="clip0_1_131">
+							<rect width="40" height="40" fill="white"/>
+						</clipPath>
+					</defs>
+				</svg>
+			</i>
+		</button>
+		<div class="modal" id="contactModal">
+			<div class="modal__dialog">
+				<button type="button" class="_close-modal modal__close" data-bs-dismiss="modal" aria-label="Close">
+					<span class="text26">Х</span>
+				</button>
+				<div class="modal__content">
+					<a class="modal__logo" href="">
+						<img src="img/logo.svg" alt="">
+					</a>
+					<div class="connection__title">
+						<span class="text36">УЗНАЙТЕ ЦЕНУ ПРЯМО СЕЙЧАС</span>
+					</div>
+					<div class="connection__subtitle">
+						<span class="text26">ЗАПОЛНИТЕ ЗАЯВКУ И ПРИКРЕПИТЕ ФОТО</span>
+					</div>
+					<div class="connection__flex">
+						<form class="connection__form form">
+							<fieldset class="connection__form-group form-group">
+								<input type="text" placeholder="Имя">
+							</fieldset>
+							<fieldset class="connection__form-group form-group">
+								<input type="tel" placeholder="Телефон">
+							</fieldset>
+							<fieldset class="connection__form-group form-file form-group">
+								<input type="file" placeholder="Прикрепите фото (от 3 до 5 изображений)">
+								<div class="form-file__input">
+									<span>Прикрепите фото (от 3 до 5 изображений)</span>
+									<img src="img/add.svg" alt="">
+								</div>
+							</fieldset>
+							<fieldset class="connection__form-group form-group">
+								<input type="text" placeholder="Комментарий">
+							</fieldset>
+							<button class="connection__form-btn form-btn btn-red">
+								<span class="text20">ОЦЕНИТЬ</span>
+							</button>
+						</form>
+						<div class="connection__info">
+							<img class="connection__img" src="img/connection-img.svg" alt="">
+							<div class="connection__desc">
+								<p class="text26">НАШ СПЕЦИАЛИСТ СВЯЖЕТСЯ И СОГЛАСУЕТ ЦЕНУ</p>
+								<p class="text26">ДОГОВАРИВАЕМСЯ О МЕСТЕ ВСТРЕЧИ ДЛЯ ПРОВЕРКИ ОРИГИНАЛЬНОСТИ И СПОСОБЕ ВЫПЛАТЫ</p>
+								<p class="text26">ПРОВОДИМ СДЕЛКУ</p>
+							</div>
+						</div>
+					</div>
+					<div class="connection__form-check form-check">
+						<input type="checkbox">
+						<label class="text18">Я согласен с политикой конфиденциальности и пользовательским соглашением</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+    <a class="footer__logo" href="">
+        <img src="img/logo.svg" alt="">
+    </a>
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-top__inner">
+                <div class="footer-top__left">
+                    <a href="" class="footer-top__tel">
+                        <span class="text22">8 459 865-81-43</span>
+                    </a>
+                    <a class="footer-top__location" href="">
+                        <span class="text22">Москва, Арбатская площадь, 1</span>
+                    </a>
+                </div>
+                <div class="footer-top__right">
+                    <div class="footer-top__socials">
+                        <a class="footer-top__social" href="">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.1667 9.83333C19.1667 14.988 14.988 19.1667 9.83333 19.1667C4.67868 19.1667 0.5 14.988 0.5 9.83333C0.5 4.67868 4.67868 0.5 9.83333 0.5C13.6218 0.5 16.883 2.75715 18.3457 6M19 8.06826C18.9939 8.03629 19.0064 8.03186 19 8" stroke="#676766" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21.4998 21.5L16.4248 16.425" stroke="#676766" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a class="footer-top__social" href="">
+                            <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.8297 21.4501C20.4905 21.4501 20.1184 21.3387 19.7159 21.1168L10.6009 14.387C10.4988 14.3119 10.4363 14.1947 10.4296 14.0681C10.4237 13.9415 10.4743 13.8192 10.5688 13.734L21.3654 4.0182C21.5384 3.86211 21.805 3.87561 21.9611 4.04942C22.1172 4.22239 22.1029 4.48901 21.9299 4.64511L11.518 14.0158L20.1698 20.408C20.3985 20.5304 20.7849 20.6856 21.06 20.5582C21.3401 20.43 21.4785 20.0208 21.546 19.7001L25.2374 2.30454C25.3808 1.72995 25.3116 1.26757 25.056 1.05495C24.8611 0.892949 24.5708 0.881137 24.257 1.02289L2.55909 9.3912C1.89337 9.65867 1.68412 9.93373 1.68749 10.0249C1.69002 10.0848 1.83346 10.2501 2.26124 10.3809L7.64015 12.06L13.5456 8.33398C13.743 8.21079 14.0029 8.26901 14.1269 8.46561C14.2509 8.6622 14.1927 8.92292 13.9953 9.04695L7.92534 12.8767C7.82071 12.9425 7.69162 12.9594 7.57434 12.9231L2.01234 11.1867C1.02515 10.8846 0.8564 10.3514 0.844587 10.0603C0.827712 9.6612 1.05806 9.08407 2.25112 8.60651L23.9313 0.246637C24.5194 -0.0216759 25.1505 0.0356991 25.5968 0.407793C26.1141 0.838949 26.2828 1.60001 26.0601 2.49523L22.372 19.8748C22.2168 20.6156 21.8945 21.1041 21.4127 21.3252C21.2313 21.4087 21.0372 21.4501 20.8297 21.4501Z" fill="#676766"/>
+                                <path d="M20.8297 21.4501C20.4905 21.4501 20.1184 21.3387 19.7159 21.1168L14.0459 16.9326C13.8586 16.7943 13.8181 16.5293 13.9573 16.3429C14.0957 16.1555 14.3606 16.115 14.5471 16.2543L20.1698 20.408C20.3985 20.5304 20.7849 20.6856 21.06 20.5582C21.3401 20.43 21.4785 20.0208 21.546 19.7001L25.2374 2.30454C25.3808 1.72995 25.3116 1.26757 25.056 1.05495C24.8611 0.892949 24.5708 0.881137 24.257 1.02289L2.55909 9.3912C1.89337 9.65867 1.68412 9.93373 1.68749 10.0249C1.69002 10.0848 1.83346 10.2501 2.26124 10.3809L7.82493 12.1174C7.95824 12.1587 8.06203 12.2642 8.10337 12.3975L10.0162 18.6927C10.0676 18.8336 10.1073 18.9737 10.1419 19.0952C10.1689 19.1914 10.2026 19.3112 10.2254 19.3466C10.222 19.3424 10.2895 19.3626 10.4692 19.3635C10.8464 19.3635 10.9898 19.2226 11.2767 18.9433L12.6773 17.5815C12.8444 17.4178 13.111 17.4229 13.2739 17.5899C13.4359 17.757 13.4325 18.0244 13.2654 18.1864L11.8884 19.5238C11.5492 19.8554 11.1898 20.2064 10.4692 20.2064C9.64237 20.2064 9.47531 19.8402 9.32934 19.3238C9.29981 19.2192 9.26606 19.0985 9.21543 18.9593L7.36087 12.8565L2.01234 11.1867C1.02515 10.8846 0.8564 10.3514 0.844587 10.0603C0.827712 9.6612 1.05806 9.08407 2.25112 8.60651L23.9313 0.246637C24.5194 -0.0216759 25.1505 0.0356991 25.5968 0.407793C26.1141 0.838949 26.2828 1.60001 26.0601 2.49523L22.372 19.8748C22.2168 20.6156 21.8945 21.1041 21.4127 21.3252C21.2313 21.4087 21.0372 21.4501 20.8297 21.4501Z" fill="#676766"/>
+                                <path d="M15.6094 7.8125C15.6094 8.04453 15.4195 8.23438 15.1875 8.23438C14.9555 8.23438 14.7656 8.04453 14.7656 7.8125C14.7656 7.58047 14.9555 7.39062 15.1875 7.39062C15.4195 7.39062 15.6094 7.58047 15.6094 7.8125Z" fill="#676766"/>
+                            </svg>
+                        </a>
+                        <a class="footer-top__social" href="">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1_471)">
+                                    <path d="M13.0033 25.1875C10.673 25.1875 8.41587 24.5286 6.46263 23.2806L2.11737 24.6691C1.97194 24.7154 1.81187 24.6764 1.70381 24.5676C1.59656 24.4587 1.55919 24.2978 1.60875 24.1532L3.01031 19.9721C1.57219 17.9246 0.8125 15.5188 0.8125 13C0.8125 9.68825 2.12225 6.58856 4.50044 4.27213C4.6605 4.11612 4.91806 4.11938 5.07487 4.27944C5.23088 4.44031 5.22762 4.69788 5.06675 4.85388C2.84781 7.01675 1.625 9.90925 1.625 13C1.625 15.4164 2.37413 17.7214 3.79031 19.6658C3.8675 19.7722 3.88863 19.9095 3.84638 20.0346L2.63413 23.6519L6.39844 22.4486C6.51544 22.4104 6.64381 22.4291 6.747 22.4965C8.60356 23.725 10.7673 24.375 13.0033 24.375C19.2741 24.375 24.375 19.2725 24.375 13C24.375 6.72831 19.2741 1.625 13.0033 1.625H13.0008C11.2401 1.625 9.55744 2.01581 7.99256 2.78606C7.79106 2.88437 7.54813 2.80231 7.449 2.60162C7.34987 2.40094 7.43194 2.15638 7.63425 2.05725C9.31125 1.23175 11.1166 0.8125 12.9967 0.8125C19.721 0.8125 25.1875 6.27981 25.1875 13C25.1875 19.7202 19.721 25.1875 13.0033 25.1875Z" fill="#676766"/>
+                                    <path d="M16.7393 19.9005C15.9179 19.9005 14.7715 19.5836 13.1327 18.9044C10.9933 18.0187 8.87272 16.163 7.16078 13.6808L7.09984 13.5939C6.53434 12.8212 5.61865 11.3408 5.61865 9.79543C5.61865 7.98436 6.52459 7.06543 6.91215 6.67299C7.27697 6.29843 7.82215 6.09937 8.43478 6.09937C8.58915 6.09937 8.72728 6.10668 8.85322 6.11399C9.36915 6.1343 9.66815 6.2643 9.95253 6.94437L10.2475 7.65937C10.5595 8.4158 10.9438 9.34936 11.0039 9.4753C11.0705 9.61262 11.2728 10.0343 11.0478 10.4731C10.9275 10.7298 10.8097 10.8655 10.648 11.0524C10.5343 11.1832 10.4587 11.2644 10.3815 11.3457C10.2922 11.4416 10.2012 11.5358 10.1102 11.6504C9.95334 11.834 9.95334 11.834 10.0062 11.9258C10.3068 12.4336 10.9462 13.4086 11.8367 14.2008C12.9921 15.2286 13.9257 15.6064 14.3742 15.7884L14.4855 15.8339C14.6033 15.8827 14.752 15.9176 14.8633 15.7998C15.0648 15.5829 15.3199 15.2262 15.5897 14.8484L15.7513 14.6217C16.0349 14.2211 16.3843 14.1366 16.6272 14.1366C16.7694 14.1366 16.9173 14.1651 17.0684 14.2219C17.4462 14.3536 19.4344 15.344 19.4547 15.3537L19.6457 15.4472C19.93 15.5837 20.1543 15.6917 20.2827 15.9176C20.4687 16.241 20.3956 17.0892 20.1128 17.8896C19.774 18.8475 18.5147 19.5958 17.5023 19.8136C17.3008 19.8558 17.0611 19.9005 16.7393 19.9005ZM8.43397 6.91187C8.05047 6.91187 7.70109 7.02724 7.52071 7.21168C7.14615 7.59193 6.43034 8.31749 6.43034 9.79543C6.43034 10.755 6.90565 11.9551 7.7344 13.0869L7.82865 13.2209C9.45203 15.5756 11.4459 17.3281 13.4422 18.1544C14.9803 18.7922 16.0276 19.0888 16.7385 19.0888C16.9823 19.0888 17.1635 19.0547 17.3292 19.0197C18.1198 18.8491 19.1151 18.2649 19.3434 17.619C19.5904 16.9227 19.5855 16.3872 19.5563 16.2808C19.5547 16.306 19.4084 16.2369 19.2906 16.1801L19.0883 16.0809C18.5187 15.7957 17.0465 15.0767 16.7889 14.9865C16.7207 14.9605 16.6687 14.9499 16.6248 14.9499C16.5882 14.9499 16.5127 14.9499 16.4103 15.0946L16.2478 15.3221C15.9626 15.7218 15.6937 16.0988 15.4548 16.3556C15.1485 16.683 14.6228 16.774 14.1702 16.5855L14.067 16.5432C13.6145 16.3604 12.5542 15.9314 11.294 14.8102C10.3222 13.9441 9.62915 12.8902 9.30253 12.3386C8.95884 11.7462 9.3074 11.3384 9.47478 11.1426C9.58122 11.0101 9.68522 10.9004 9.78922 10.7899C9.85747 10.7176 9.92572 10.6453 9.99559 10.5641C10.1784 10.3536 10.2385 10.2837 10.3173 10.1156C10.3409 10.0692 10.3539 10.0034 10.2694 9.82793C10.2077 9.69793 9.81278 8.74405 9.49509 7.97055L9.20097 7.25799C9.0669 6.93624 9.0669 6.93624 8.81178 6.92649C8.69478 6.91836 8.57128 6.91187 8.43397 6.91187Z" fill="#676766"/>
+                                    <path d="M6.09375 3.65625C6.31812 3.65625 6.5 3.47437 6.5 3.25C6.5 3.02563 6.31812 2.84375 6.09375 2.84375C5.86938 2.84375 5.6875 3.02563 5.6875 3.25C5.6875 3.47437 5.86938 3.65625 6.09375 3.65625Z" fill="#676766"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_471">
+                                        <rect width="26" height="26" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom__inner">
+                <div class="footer-bottom__info">
+                    <a class="footer-bottom__link" href="">
+                        <span class="text14">ⓒ2004-2023, Салон часов “Эталон”</span>
+                    </a>
+                    <a class="footer-bottom__link" href="">
+                        <span class="text14">Информация сайта не является публичной офертой</span>
+                    </a>
+                    <a class="footer-bottom__link" href="">
+                        <span class="text14">Пользовательское соглашение</span>
+                    </a>
+                    <a class="footer-bottom__link" href="">
+                        <span class="text14">Политика конфиденциальности</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+	</div>
+
+	<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+
+	<script type="text/javascript">
+    ymaps.ready(init);
+
+    function init() {
+        var myMap = new ymaps.Map("map", {
+            center: [55.752298, 37.596094],
+            zoom: 15
+        });
+
+        var myPlacemark = new ymaps.Placemark([55.752298, 37.596094], null, {
+            iconLayout: 'default#image',
+            iconImageHref: "img/map-icon.svg",
+            iconImageSize: [45, 60],
+        });
+        myMap.geoObjects.add(myPlacemark);
+        myMap.behaviors.disable('scrollZoom');
+
+    }
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Навигация</title>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=9133eb49-3a97-4b2d-90be-6b80a97a5036" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+		<nav class="nav">
+			<div class="container">
+				<ul class="nav__list">
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="redemption%20.html">Выкуп часов</a></li>
+					<li><a href="evaluation%20.html">Оценка</a></li>
+					<li><a href="search.html">Результаты поиска</a></li>
+					<li><a href="catalog.html">Каталог</a></li>
+					<li><a href="product-item.html">Товар</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+					<li><a href="news.html">Новости</a></li>
+					<li><a href="article.html">Статьи</a></li>
+					<li><a href="about.html">О нас</a></li>
+					<li><a href="services.html">Услуги</a></li>
+					<li>
+						<button data-modal="contactModal" class="nav__btn btn-red">
+							<span class="text20">Модальное окно</span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+
+	<div class="modal" id="contactModal">
+		<div class="modal__dialog">
+			<button type="button" class="_close-modal modal__close" data-bs-dismiss="modal" aria-label="Close">
+				<span class="text26">Х</span>
+			</button>
+			<div class="modal__content">
+				<a class="modal__logo" href="">
+					<img src="img/logo.svg" alt="">
+				</a>
+				<div class="connection__title">
+					<span class="text36">УЗНАЙТЕ ЦЕНУ ПРЯМО СЕЙЧАС</span>
+				</div>
+				<div class="connection__subtitle">
+					<span class="text26">ЗАПОЛНИТЕ ЗАЯВКУ И ПРИКРЕПИТЕ ФОТО</span>
+				</div>
+				<div class="connection__flex">
+					<form class="connection__form form">
+						<fieldset class="connection__form-group form-group">
+							<input type="text" placeholder="Имя">
+						</fieldset>
+						<fieldset class="connection__form-group form-group">
+							<input type="tel" placeholder="Телефон">
+						</fieldset>
+						<fieldset class="connection__form-group form-file form-group">
+							<input type="file" placeholder="Прикрепите фото (от 3 до 5 изображений)">
+							<div class="form-file__input">
+								<span>Прикрепите фото (от 3 до 5 изображений)</span>
+								<img src="img/add.svg" alt="">
+							</div>
+						</fieldset>
+						<fieldset class="connection__form-group form-group">
+							<input type="text" placeholder="Комментарий">
+						</fieldset>
+						<button class="connection__form-btn form-btn btn-red">
+							<span class="text20">ОЦЕНИТЬ</span>
+						</button>
+					</form>
+					<div class="connection__info">
+						<img class="connection__img" src="img/connection-img.svg" alt="">
+						<div class="connection__desc">
+							<p class="text26">НАШ СПЕЦИАЛИСТ СВЯЖЕТСЯ И СОГЛАСУЕТ ЦЕНУ</p>
+							<p class="text26">ДОГОВАРИВАЕМСЯ О МЕСТЕ ВСТРЕЧИ ДЛЯ ПРОВЕРКИ ОРИГИНАЛЬНОСТИ И СПОСОБЕ ВЫПЛАТЫ</p>
+							<p class="text26">ПРОВОДИМ СДЕЛКУ</p>
+						</div>
+					</div>
+				</div>
+				<div class="connection__form-check form-check">
+					<input type="checkbox">
+					<label class="text18">Я согласен с политикой конфиденциальности и пользовательским соглашением</label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+
+
+</body>
+
+</html>
